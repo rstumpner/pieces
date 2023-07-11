@@ -1,0 +1,25 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Pieces'
+theme = ''
+relativeURLs = true
+uglyURLs = true
+local = true
+cache = true
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  pageRef = '/'
+  weight = 10
+[[menu.main]]
+  name = 'Challenges'
+  pageRef = '/challenge'
+  weight = 20
+[[menu.main]]
+  name = 'Q & A'
+  pageRef = '/Q&A'
+  weight = 30
+
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
