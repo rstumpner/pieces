@@ -1,11 +1,8 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://rstumpner.github.io/pieces/'
 languageCode = 'en-us'
 title = 'Pieces'
 theme = 'Papermod'
-relativeURLs = true
 uglyURLs = true
-local = true
-cache = true
 
 [menu]
 [[menu.main]]
@@ -14,11 +11,11 @@ cache = true
   weight = 10
 [[menu.main]]
   name = 'Challenges'
-  pageRef = '/challenge'
+  pageRef = '/challenge.html'
   weight = 20
 [[menu.main]]
   name = 'Q & A'
-  pageRef = '/Q&A'
+  pageRef = '/QA.html'
   weight = 30
 
 [markup.goldmark.renderer]

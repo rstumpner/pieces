@@ -1,6 +1,5 @@
 ---
 title: "Challenge"
-date: 2023-07-07T15:08:05+02:00
 draft: false
 ---
 
