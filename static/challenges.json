@@ -123,14 +123,14 @@
 },
 {
     "id": 11,
-    "Name der Chellange": "",
-    "Beschreibung": "",
-    "Anzahl der Mitspieler": "",
-    "Dauer (Minuten)": "",
-    "Level": "",
+    "Name der Chellange": "Seilziehen",
+    "Beschreibung": "Fordert eine andere Kleingruppe zum Seilziehen heraus. Die Gewinnergruppe erhält einen Würfelteil",
+    "Anzahl der Mitspieler": "10",
+    "Dauer (Minuten)": "20",
+    "Level": "2",
     "Schwerpunkt": "",
     "Kategorie": "",
-    "Material": [],
-    "Active": false
+    "Material": ["Seil"],
+    "Active": true
 }
 ]
