@@ -11,7 +11,7 @@ uglyURLs = true
   weight = 10
 [[menu.main]]
   name = 'Challenges'
-  pageRef = '/challenge.html'
+  pageRef = '/vergabe.html'
   weight = 20
 [[menu.main]]
   name = 'Q & A'

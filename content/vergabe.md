@@ -1,0 +1,38 @@
+---
+draft: false
+---
+
+<link rel="stylesheet" href="./customStyles.css">
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./qrcode.js"></script>
+<script type="text/javascript" src="./challengeHandler.js"></script>
+
+<div class="post-content">
+<h1>Challenge - Vergabe</h1>
+
+<p style="margin-bottom: 10px">Wähle ein Level aus und klicke den Knopf, um eine zufällige Challenge zu erhalten!</p>
+<span>Level:</span>
+<select name="level" id="levelSelection" style="margin-bottom: 20px;">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<input type="button" value="Neue Challenge" onclick="GetNewChallenge()" class="button newChallenge">
+
+<hr class="horizontalLine"></hr>
+
+<div class="box">
+        </div>
+<h3 class="title" id="title">Titel</h3>
+
+<div class="challengeWrapper">
+        <p id="description">Beschreibung</p>
+        <div>
+            <span id="playerCount">Personen:</span>
+            <span id="level">Level: </span>
+            <span id="duration">Dauer: </span>
+        </div>
+        <div id="qrcode"></div>
+</div>
+</div>
+

@@ -1,0 +1,72 @@
+@media only screen and (orientation: portrait) and (max-width: 500px) {
+    #duration {
+        float: inline-start !important;
+    }
+}
+
+#duration {
+    align-self: flex-start;
+}
+
+#level {
+    margin-left: 40px;
+}
+
+#duration {
+    margin-right: 40px;
+    float: inline-end;
+}
+
+#qrcode {
+    width: 15vh;
+    align-self: flex-end;
+    margin-right: 40px;
+}
+
+.newChallenge {
+    margin-left: 10px !important;
+}
+
+.deactivated {
+    display: none !important;
+}
+
+.button {
+    border: grey solid 1pt;
+    border-radius: 3pt;
+    padding: 1pt 4pt;
+    background-color: lightgrey;
+    margin: 0px;
+}
+
+.horizontalLine {
+    background-color: black !important;
+    margin-right: 50px !important;
+}
+
+.dark .horizontalLine {
+    background-color: white !important;
+}
+
+.box {
+    width: 20px;
+    height: 3px;
+    background-color: black;
+    display: inline-block;
+    margin: 0px 0px 6px 0px;
+}
+
+.dark .box {
+    background-color: white !important;
+}
+
+.challengeWrapper {
+    margin: 5px 0px 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.title {
+    display: inline;
+}

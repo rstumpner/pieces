@@ -1,53 +1,32 @@
 ---
-title: "Challenge"
-draft: false
 ---
 
+<link rel="stylesheet" href="./customStyles.css">
 <script type="text/javascript" src="./jquery.min.js"></script>
 <script type="text/javascript" src="./qrcode.js"></script>
+<script type="text/javascript" src="./challengeSearch.js"></script>
 
-<h1 id="title">Titel</h1>
-<p id="description">Beschreibung</p>
-<p id="playerCount">Personen: </p>
-<p id="duration">Dauer: </p>
-<p id="level">Level: </p>
-<div id="qrcode" style="width:300px; height:300px; margin-top:15px;"></div>
+<h1>Deine Challenge</h1>
 
+<div class="box">
+        </div>
+<h3 class="title" id="title">Titel</h3>
 
-<script type="text/javascript">
+<div class="challengeWrapper">
+        <p id="description">Beschreibung</p>
+        <div>
+            <span id="playerCount">Personen:</span>
+            <span id="level">Level: </span>
+            <span id="duration">Dauer: </span>
+        </div>
+        <div id="qrcode"></div>
+</div>
+<div id="error" class="deactivated">
+    <h1>Fehler:</h1>
+    <p>Challenge konnte nicht gefunden werden.</p>
+    <p>Stelle bitte sicher, dass der eingegebene Challenge-Code korrekt ist.</p>
+    <input id="reloadButton" type="button" value="Seite aktualisieren" class="button">
+</div>
 
-var foundChallenge = true;
-var id = window.location.href.split('#')[1];
-var obj;
-
-if (id == undefined) foundChallenge = false;
-
-if (foundChallenge) {
-$.getJSON("challenges.json", function(json) {
-    
-    // if id's are in order use selector, otherwise search for .id
-
-    if (id >= json.length && id >= 0) {
-        foundChallenge = false;
-    } else {
-        obj = json[id - 1];
-
-        console.log(obj);
-        document.getElementById("title").innerHTML = obj["Name der Chellange"];
-        document.getElementById("description").innerHTML = obj["Beschreibung"];
-        document.getElementById("playerCount").innerHTML = "Personen: " + obj["Anzahl der Mitspieler"];
-        document.getElementById("duration").innerHTML = "Dauer: " + obj["Dauer (Minuten)"] + " Minuten";
-        document.getElementById("level").innerHTML = "Level: " + obj["Level"];
-    }
-});
-}
-
-
-
-    new QRCode(document.getElementById("qrcode"), window.location.href, {
-	width : 300,
-	height : 300
-});
-</script>
 
 

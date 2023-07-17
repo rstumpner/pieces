@@ -1,9 +1,18 @@
 ---
 title: "Q&A"
-draft: false
 ---
 
-This is a good file
+### Was ist Pieces?
+Erklärung ...
+
+### Wo bekomme ich eine neue Challenge?
+...
+
+### Wie finde ich meine Challenge?
+...
+
+### Noch Fragen?
+...
 
 
 
