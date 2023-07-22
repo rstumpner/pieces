@@ -1,10 +1,12 @@
----
----
++++
+url = "challenge"
+title = "Aufgabe"
++++
 
-<link rel="stylesheet" href="./customStyles.css">
-<script type="text/javascript" src="./jquery.min.js"></script>
-<script type="text/javascript" src="./qrcode.js"></script>
-<script type="text/javascript" src="./challengeSearch.js"></script>
+<link rel="stylesheet" href="../customStyles.css">
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="../qrcode.js"></script>
+<script type="text/javascript" src="../challengeSearch.js"></script>
 
 <h1>Deine Challenge</h1>
 

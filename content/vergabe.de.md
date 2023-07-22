@@ -1,14 +1,12 @@
----
-draft: false
----
++++
+url = 'vergabe'
+title = 'Challenge-Vergabe'
++++
 
-<link rel="stylesheet" href="./customStyles.css">
-<script type="text/javascript" src="./jquery.min.js"></script>
-<script type="text/javascript" src="./qrcode.js"></script>
-<script type="text/javascript" src="./challengeHandler.js"></script>
-
-<div class="post-content">
-<h1>Challenge - Vergabe</h1>
+<link rel="stylesheet" href="../customStyles.css">
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="../qrcode.js"></script>
+<script type="text/javascript" src="../challengeHandler.js"></script>
 
 <p style="margin-bottom: 10px">Wähle ein Level aus und klicke den Knopf, um eine zufällige Challenge zu erhalten!</p>
 <span>Level:</span>
@@ -17,7 +15,10 @@ draft: false
     <option value="2">2</option>
     <option value="3">3</option>
 </select>
-<input type="button" value="Neue Challenge" onclick="GetNewChallenge()" class="button newChallenge">
+<input type="button" value="Neue Challenge" id="challengeButton" class="button newChallenge" onclick="GetNewChallenge()">
+<br>
+<input type="checkbox" id="autoRotation" value="rotation" unchecked>
+<label for="autoRotation">Auto-Rotation</label><br>
 
 <hr class="horizontalLine"></hr>
 
@@ -33,6 +34,5 @@ draft: false
             <span id="duration">Dauer: </span>
         </div>
         <div id="qrcode"></div>
-</div>
 </div>
 

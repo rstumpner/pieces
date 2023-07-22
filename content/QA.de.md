@@ -1,6 +1,7 @@
----
-title: "Q&A"
----
++++
+title = 'Frage & Antwort'
+url = 'Q&A'
++++
 
 ### Was ist Pieces?
 Erklärung ...

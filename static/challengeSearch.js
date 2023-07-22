@@ -1,4 +1,16 @@
+var jsonLocation = "../challenges.json";
+
 $(document).ready(function () {
+    if (window.location.href.includes("/en")) {
+        jsonLocation = "../../challenges.json"
+        attributes = ["Players", "Duration", "Level"];
+        document.getElementById("languageLink").href = window.location.href.replace("/en", "");
+    } else {
+        document.getElementById("languageLink").href = window.location.href.replace("pieces/", "pieces/en/");
+    }
+
+
+
     searchForChallenge();
     addEventListener();
 });
@@ -28,7 +40,7 @@ function searchForChallenge() {
     }
     id = id.replaceAll("/", "");
 
-    $.getJSON("challenges.json", function (json) {
+    $.getJSON(jsonLocation, function (json) {
         // if id's are in order use selector, otherwise search for .id
         if (!isNumeric(id) || id > json.length || id < 1) {
             deactivateFields();

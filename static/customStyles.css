@@ -2,6 +2,12 @@
     #duration {
         float: inline-start !important;
     }
+
+    #qrcode {
+        width: 5vh;
+        align-self: normal;
+        margin-top: 3vh;
+    }
 }
 
 #duration {
