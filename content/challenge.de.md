@@ -16,7 +16,7 @@ title = "Aufgabe"
         language = "en";
         document.getElementById("languageLink").href = window.location.href.replace("/en", "");
     } else {
-        document.getElementById("languageLink").href = window.location.href.replace("pieces/", "pieces/en/");
+        document.getElementById("languageLink").href = window.location.href.replace("/challenge", "/en/challenge");
     }
     document.getElementById("langSwitch").href = document.getElementById("languageLink").href;
 
