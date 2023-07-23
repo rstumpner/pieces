@@ -6,12 +6,13 @@
 <ul class="i18n_list">
     {{- range .Translations }}
     <li>
-        <a id="languageLink" href="{{ .Permalink }}#5">
-            {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
+        <a id="languageLink" href="{{ .Permalink }}">
+            {{- (.Language.LanguageName) }}
+            <!-- {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
             {{- .Language.LanguageName | emojify -}}
             {{- else }}
             {{- .Lang | title -}}
-            {{- end -}}
+            {{- end -}} -->
         </a>
     </li>
     {{- end }}

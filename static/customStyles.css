@@ -29,6 +29,11 @@
     margin-right: 40px;
 }
 
+/* maybe show switch */
+.lang-switch {
+    display: none !important;
+}
+
 .newChallenge {
     margin-left: 10px !important;
 }

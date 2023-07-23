@@ -1,28 +1,9 @@
 var jsonLocation = "../challenges.json";
-
-$(document).ready(function () {
-    if (window.location.href.includes("/en")) {
-        jsonLocation = "../../challenges.json"
-        attributes = ["Players", "Duration", "Level"];
-        document.getElementById("languageLink").href = window.location.href.replace("/en", "");
-    } else {
-        document.getElementById("languageLink").href = window.location.href.replace("pieces/", "pieces/en/");
-    }
-
-
-
-    searchForChallenge();
-    addEventListener();
-});
-
-function addEventListener() {
-    document.getElementById("reloadButton").addEventListener("click", () => {
-        location.reload();
-    })
-}
+var language = "de";
+var attributes = ["Personen", "Dauer", "Level"];
 
 function deactivateFields() {
-    document.getElementById("challenge").classList.add("deactivated");
+    document.getElementById("challengeWrapper").classList.add("deactivated");
     document.getElementById("error").classList.remove("deactivated");
 }
 
@@ -47,16 +28,28 @@ function searchForChallenge() {
         } else {
             var obj = json[id - 1];
 
-            document.getElementById("title").innerHTML = obj["Name der Chellange"];
-            document.getElementById("description").innerHTML = obj["Beschreibung"];
-            document.getElementById("playerCount").innerHTML = "Personen: " + obj["Anzahl der Mitspieler"];
-            document.getElementById("duration").innerHTML = "Dauer: " + obj["Dauer (Minuten)"] + " Minuten";
-            document.getElementById("level").innerHTML = "Level: " + obj["Level"];
+            if (language == "de") {
+                document.getElementById("title").textContent = obj["titel_de"];
+                document.getElementById("description").textContent = obj["description_de"];
+            } else if (language == "en") {
+                document.getElementById("title").textContent = obj["titel_en"];
+                document.getElementById("description").textContent = obj["description_en"];
+            }
+            document.getElementById("playerCount").textContent = attributes[0] + ": " + obj["Anzahl der Mitspieler"];
+            document.getElementById("duration").textContent = attributes[1] + ": " + obj["Dauer (Minuten)"] + " Minuten";
+            document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
+            document.getElementById("qrcode").innerHTML = "";
+
+            new QRCode(document.getElementById("qrcode"), window.location.href, {
+                width: 300,
+                height: 300
+            });
         }
     });
+}
 
-    new QRCode(document.getElementById("qrcode"), window.location.href, {
-        width: 300,
-        height: 300
-    });
+function addEventListener() {
+    document.getElementById("reloadButton").addEventListener("click", () => {
+        location.reload();
+    })
 }

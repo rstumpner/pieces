@@ -15,5 +15,5 @@ title: "Willkommen bei Pieces"
 <input id="submitInput" type="button" class="button" value="Suchen">
 </p>
 <h3>Du hast Fragen?</h3>
-<p><a href="./qa.html">Hier findest du die Antworten!</a></p>
+<p><a href="./Q&A">Hier findest du die Antworten!</a></p>
 
