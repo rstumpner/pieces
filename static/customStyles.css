@@ -2,11 +2,16 @@
     #duration {
         float: inline-start !important;
     }
+}
 
+@media only screen and (orientation: portrait) {
     #qrcode {
-        width: 5vh;
-        align-self: normal;
+        align-self: normal !important;
         margin-top: 3vh;
+    }
+
+    #title {
+        margin-left: 5px !important;
     }
 }
 
