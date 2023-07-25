@@ -4,6 +4,17 @@
     }
 }
 
+@media only screen and (orientation: portrait) {
+    #qrcode {
+        align-self: normal !important;
+        margin-top: 3vh;
+    }
+
+    #title {
+        margin-left: 5px !important;
+    }
+}
+
 #duration {
     align-self: flex-start;
 }
@@ -21,6 +32,11 @@
     width: 15vh;
     align-self: flex-end;
     margin-right: 40px;
+}
+
+/* maybe show switch */
+.lang-switch {
+    display: none !important;
 }
 
 .newChallenge {

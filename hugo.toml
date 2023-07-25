@@ -1,8 +1,11 @@
 baseURL = 'https://rstumpner.github.io/pieces/'
-languageCode = 'en-us'
-title = 'Pieces'
 theme = 'Papermod'
+title = 'Pieces'
 uglyURLs = true
+DefaultContentLanguage = 'de'
+
+[params]
+  defaultTheme = "auto"
 
 [menu]
 [[menu.main]]
@@ -11,12 +14,36 @@ uglyURLs = true
   weight = 10
 [[menu.main]]
   name = 'Challenges'
-  pageRef = '/vergabe.html'
+  pageRef = 'vergabe'
   weight = 20
 [[menu.main]]
   name = 'Q & A'
-  pageRef = '/QA.html'
+  pageRef = 'QA'
   weight = 30
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files
+
+[languages]
+  [languages.de]
+    languageCode = 'de'
+    languageName = 'Deutsch'
+    weight = 1
+    
+  [languages.en]
+    languageCode = 'en'
+    languageName = 'English'
+    weight = 2
+    [[languages.en.menu.main]]
+      name = 'Home'
+      url = '../en'
+      weight = 10
+    [[languages.en.menu.main]]
+      name = 'Challenges'
+      url = '../en/vergabe/'
+      weight = 20
+    [[languages.en.menu.main]]
+      name = 'Q & A'
+      url = '../en/Q&A/'
+      weight = 30
+
