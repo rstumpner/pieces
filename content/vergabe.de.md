@@ -8,18 +8,6 @@ title = 'Challenge-Vergabe'
 <script type="text/javascript" src="../qrcode.js"></script>
 <script type="text/javascript" src="../challengeHandler.js"></script>
 
-<p style="margin-bottom: 10px">Wähle ein Level aus und klicke den Knopf, um eine zufällige Challenge zu erhalten!</p>
-<span>Level:</span>
-<select name="level" id="levelSelection" style="margin-bottom: 20px;">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-</select>
-<input type="button" value="Neue Challenge" id="challengeButton" class="button newChallenge" onclick="GetNewChallenge()">
-<br>
-<input type="checkbox" id="autoRotation" value="rotation" unchecked>
-<label for="autoRotation">Auto-Rotation</label><br>
-
 <hr class="horizontalLine"></hr>
 
 <div class="box">
@@ -34,5 +22,29 @@ title = 'Challenge-Vergabe'
             <span id="duration">Dauer: </span>
         </div>
         <div id="qrcode"></div>
+</div>
+
+<div id="parentContainer">
+    <div class="hideContainer">
+        <input type="checkbox" id="hideButton" checked>
+    </div>
+    <div id="interactionContainer">
+        <input type="checkbox" value="previousChallenge" id="backwardButton">
+        <input type="checkbox" value="rotation" id="playButton" unchecked>
+        <input type="checkbox" value="newChallenge" id="forwardButton">
+    </div>
+    <div id="settingsContainer">
+        <div class="childDiv">
+            <span>Level:</span>
+            <select name="level" id="levelSelection">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="childDiv">
+            <span>Zeit:</span><input type="text" value="15s" id="timeInput"/>
+        </div>
+    </div>
 </div>
 

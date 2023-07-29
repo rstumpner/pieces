@@ -13,6 +13,20 @@
     #title {
         margin-left: 5px !important;
     }
+
+    #timeInput {
+        width: 2vw;
+    }
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        appearance: none;
+        display: block;
+        width: 7vw;
+        cursor: pointer;
+    }
 }
 
 #duration {
@@ -85,4 +99,102 @@
 
 .title {
     display: inline;
+}
+
+#timeInput {
+    font: caption;
+    border: 1px solid grey;
+    border-radius: 3pt;
+    padding: 1pt 4pt;
+    width: 1.8vw;
+    color: black;
+    background-color: #e9e9ed;
+    font-size: 13px
+}
+
+.childDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2vw;
+    font-weight: bold;
+}
+
+.childDiv span {
+    font-size: 14px;
+}
+
+#parentContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    padding: 1vh 0 1vh 0;
+    border-bottom: 2px solid black;
+}
+
+.removeBorder {
+    border: none !important;
+}
+
+#settingsContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5vw;
+}
+
+.hideContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#interactionContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hideButton {
+    content: url('./images/open.svg');
+    width: 1.75vw !important;
+}
+
+#hideButton:checked {
+    content: url('./images/close.svg');
+}
+
+#playButton {
+    content: url('./images/play.svg');
+    width: 2vw !important;
+}
+
+#playButton:checked {
+    content: url('./images/pause.svg');
+}
+
+#forwardButton,
+#backwardButton,
+#playButton,
+#hideButton {
+    appearance: none;
+    display: block;
+    width: 1.5vw;
+    cursor: pointer;
+}
+
+#forwardButton {
+    content: url('./images/forward.svg');
+}
+
+#backwardButton {
+    content: url('./images/backwards.svg');
 }
