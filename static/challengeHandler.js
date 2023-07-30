@@ -107,6 +107,10 @@ function GetPreviousChallenge() {
         document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
         document.getElementById("qrcode").innerHTML = "";
 
+        // change src of level-icon
+        document.getElementById("challengeIcon").removeAttribute('class');
+        document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
+
         window.location.href = window.location.href.split("#")[0] + "#" + obj["id"];
         document.getElementById("languageLink").href = document.getElementById("languageLink").href.split("#")[0] + "#" + obj["id"];
 
@@ -149,6 +153,10 @@ function GetNewChallenge() {
         document.getElementById("duration").textContent = attributes[1] + ": " + obj["Dauer (Minuten)"] + " Minuten";
         document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
         document.getElementById("qrcode").innerHTML = "";
+
+        // change src of level-icon
+        document.getElementById("challengeIcon").removeAttribute('class');
+        document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
 
         window.location.href = window.location.href.split("#")[0] + "#" + obj["id"];
         document.getElementById("languageLink").href = document.getElementById("languageLink").href.split("#")[0] + "#" + obj["id"];
@@ -193,6 +201,10 @@ function searchForChallenge() {
             document.getElementById("duration").textContent = attributes[1] + ": " + obj["Dauer (Minuten)"] + " Minuten";
             document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
             document.getElementById("qrcode").innerHTML = "";
+
+            // change src of level-icon
+            document.getElementById("challengeIcon").removeAttribute('class');
+            document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
 
             new QRCode(document.getElementById("qrcode"), baseURL + "challenge/#" + obj.id, {
                 width: 300,

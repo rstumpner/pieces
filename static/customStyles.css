@@ -45,7 +45,10 @@
 #qrcode {
     width: 15vh;
     align-self: flex-end;
-    margin-right: 40px;
+    margin: 3vh 40px 0 0;
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
 /* maybe show switch */
@@ -83,18 +86,18 @@
     height: 3px;
     background-color: black;
     display: inline-block;
-    margin: 0px 0px 6px 0px;
-}
-
-.dark .box {
-    background-color: white !important;
+    margin: 5px 0px 6px 0px;
 }
 
 .challengeWrapper {
-    margin: 5px 0px 0px 15px;
+    margin: 0px 0px 0px 7vw;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+}
+
+.challengeAttributes {
+    margin-top: 1vh;
 }
 
 .title {
@@ -132,12 +135,46 @@
     width: 90%;
     position: absolute;
     bottom: 0;
-    padding: 1vh 0 1vh 0;
-    border-bottom: 2px solid black;
+    padding: 1vh 0 0 0;
+    border-top: 2px solid black;
 }
 
 .removeBorder {
     border: none !important;
+}
+
+.logo {
+    align-items: center;
+}
+
+.mainLogo {
+    background-image: url("./images/piecesIcon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+#challengeIcon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 6vw;
+    width: 6vw;
+}
+
+.headlineWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5vw;
+    margin-top: 5vh;
+}
+
+.headlineWrapper h1 {
+    margin: 0 0 1vh 0;
 }
 
 #settingsContainer {
@@ -163,6 +200,22 @@
     align-items: center;
 }
 
+.level1 {
+    background-image: url("./images/pieces1.png");
+}
+
+.level2 {
+    background-image: url("./images/pieces2.png");
+}
+
+.level3 {
+    background-image: url("./images/pieces3.png");
+}
+
+.level4 {
+    background-image: url("./images/pieces4.png");
+}
+
 #hideButton {
     content: url('./images/open.svg');
     width: 1.75vw !important;
@@ -181,6 +234,14 @@
     content: url('./images/pause.svg');
 }
 
+#forwardButton {
+    content: url('./images/forward.svg');
+}
+
+#backwardButton {
+    content: url('./images/backwards.svg');
+}
+
 #forwardButton,
 #backwardButton,
 #playButton,
@@ -191,10 +252,46 @@
     cursor: pointer;
 }
 
-#forwardButton {
-    content: url('./images/forward.svg');
+/* DARK MODE */
+
+.dark #hideButton {
+    content: url('./images/openW.svg');
+    width: 1.75vw !important;
 }
 
-#backwardButton {
-    content: url('./images/backwards.svg');
+.dark #hideButton:checked {
+    content: url('./images/closeW.svg');
+}
+
+.dark #playButton {
+    content: url('./images/playW.svg');
+    width: 2vw !important;
+}
+
+.dark #playButton:checked {
+    content: url('./images/pauseW.svg');
+}
+
+.dark #forwardButton {
+    content: url('./images/forwardW.svg');
+}
+
+.dark #backwardButton {
+    content: url('./images/backwardsW.svg');
+}
+
+.dark .mainLogo {
+    background-image: url("./images/piecesIconW.png");
+}
+
+.dark .box {
+    background-color: white !important;
+}
+
+.dark #parentContainer {
+    border-color: white;
+}
+
+.dark #qrcode {
+    border-color: white;
 }

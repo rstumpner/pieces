@@ -8,15 +8,18 @@ title = 'Challenge-Vergabe'
 <script type="text/javascript" src="../qrcode.js"></script>
 <script type="text/javascript" src="../challengeHandler.js"></script>
 
-<hr class="horizontalLine"></hr>
-
-<div class="box">
+<div class="headlineWrapper">
+    <div class="challengeIcon level1"></div>
+    <div>
+        <!-- <div class="box"> -->
         </div>
-<h3 class="title" id="title">Titel</h3>
+        <h1 class="title" id="title">Titel</h1>
+    </div>
+</div>
 
 <div class="challengeWrapper">
         <p id="description">Beschreibung</p>
-        <div>
+        <div class="challengeAttributes">
             <span id="playerCount">Personen:</span>
             <span id="level">Level: </span>
             <span id="duration">Dauer: </span>

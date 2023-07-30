@@ -8,15 +8,18 @@ title = 'Challenge-Distribution'
 <script type="text/javascript" src="../../qrcode.js"></script>
 <script type="text/javascript" src="../../challengeHandler.js"></script>
 
-<hr class="horizontalLine"></hr>
-
-<div class="box">
+<div class="headlineWrapper">
+    <div id="challengeIcon" class="level1"></div>
+    <div>
+        <!-- <div class="box"> -->
         </div>
-<h3 class="title" id="title">Title</h3>
+        <h1 class="title" id="title">Title</h1>
+    </div>
+</div>
 
 <div class="challengeWrapper">
         <p id="description">Description</p>
-        <div>
+        <div class="challengeAttributes">
             <span id="playerCount">Persons:</span>
             <span id="level">Level: </span>
             <span id="duration">Duration: </span>
