@@ -9,7 +9,7 @@ title = 'Challenge-Vergabe'
 <script type="text/javascript" src="../challengeHandler.js"></script>
 
 <div class="headlineWrapper">
-    <div class="challengeIcon level1"></div>
+    <div id="challengeIcon" class="level1"></div>
     <div>
         <!-- <div class="box"> -->
         </div>
