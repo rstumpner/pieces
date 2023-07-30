@@ -13,6 +13,20 @@
     #title {
         margin-left: 5px !important;
     }
+
+    #timeInput {
+        width: 2vw;
+    }
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        appearance: none;
+        display: block;
+        width: 7vw;
+        cursor: pointer;
+    }
 }
 
 #duration {
@@ -31,7 +45,10 @@
 #qrcode {
     width: 15vh;
     align-self: flex-end;
-    margin-right: 40px;
+    margin: 3vh 40px 0 0;
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
 /* maybe show switch */
@@ -69,20 +86,212 @@
     height: 3px;
     background-color: black;
     display: inline-block;
-    margin: 0px 0px 6px 0px;
+    margin: 5px 0px 6px 0px;
+}
+
+.challengeWrapper {
+    margin: 0px 0px 0px 7vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.challengeAttributes {
+    margin-top: 1vh;
+}
+
+.title {
+    display: inline;
+}
+
+#timeInput {
+    font: caption;
+    border: 1px solid grey;
+    border-radius: 3pt;
+    padding: 1pt 4pt;
+    width: 1.8vw;
+    color: black;
+    background-color: #e9e9ed;
+    font-size: 13px
+}
+
+.childDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2vw;
+    font-weight: bold;
+}
+
+.childDiv span {
+    font-size: 14px;
+}
+
+#parentContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    padding: 1vh 0 0 0;
+    border-top: 2px solid black;
+}
+
+.removeBorder {
+    border: none !important;
+}
+
+.logo {
+    align-items: center;
+}
+
+.mainLogo {
+    background-image: url("./images/piecesIcon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+#challengeIcon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 6vw;
+    width: 6vw;
+}
+
+.headlineWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5vw;
+    margin-top: 5vh;
+}
+
+.headlineWrapper h1 {
+    margin: 0 0 1vh 0;
+}
+
+#settingsContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5vw;
+}
+
+.hideContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#interactionContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level1 {
+    background-image: url("./images/pieces1.png");
+}
+
+.level2 {
+    background-image: url("./images/pieces2.png");
+}
+
+.level3 {
+    background-image: url("./images/pieces3.png");
+}
+
+.level4 {
+    background-image: url("./images/pieces4.png");
+}
+
+#hideButton {
+    content: url('./images/open.svg');
+    width: 1.75vw !important;
+}
+
+#hideButton:checked {
+    content: url('./images/close.svg');
+}
+
+#playButton {
+    content: url('./images/play.svg');
+    width: 2vw !important;
+}
+
+#playButton:checked {
+    content: url('./images/pause.svg');
+}
+
+#forwardButton {
+    content: url('./images/forward.svg');
+}
+
+#backwardButton {
+    content: url('./images/backwards.svg');
+}
+
+#forwardButton,
+#backwardButton,
+#playButton,
+#hideButton {
+    appearance: none;
+    display: block;
+    width: 1.5vw;
+    cursor: pointer;
+}
+
+/* DARK MODE */
+
+.dark #hideButton {
+    content: url('./images/openW.svg');
+    width: 1.75vw !important;
+}
+
+.dark #hideButton:checked {
+    content: url('./images/closeW.svg');
+}
+
+.dark #playButton {
+    content: url('./images/playW.svg');
+    width: 2vw !important;
+}
+
+.dark #playButton:checked {
+    content: url('./images/pauseW.svg');
+}
+
+.dark #forwardButton {
+    content: url('./images/forwardW.svg');
+}
+
+.dark #backwardButton {
+    content: url('./images/backwardsW.svg');
+}
+
+.dark .mainLogo {
+    background-image: url("./images/piecesIconW.png");
 }
 
 .dark .box {
     background-color: white !important;
 }
 
-.challengeWrapper {
-    margin: 5px 0px 0px 15px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.dark #parentContainer {
+    border-color: white;
 }
 
-.title {
-    display: inline;
+.dark #qrcode {
+    border-color: white;
 }
