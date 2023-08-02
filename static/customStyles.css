@@ -325,6 +325,10 @@ select {
     background-image: url("./images/piecesIconW.png");
 }
 
+.dark .informationIcon {
+    background-image: url("./images/informationW.svg");
+}
+
 .dark .box {
     background-color: white !important;
 }
