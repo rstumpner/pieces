@@ -1,6 +1,6 @@
 +++
 url = "challenge"
-title = "Aufgabe"
+title = "Deine Challenge"
 +++
 
 <link rel="stylesheet" href="../customStyles.css">
@@ -26,19 +26,41 @@ title = "Aufgabe"
 
 </script>
 
-<div id="challengeWrapper">
-        <h2>Deine Challenge</h1>
-        <div class="box">
+<div id="challenge">
+<div class="headlineWrapper">
+    <div id="challengeIcon" class="level1"></div>
+    <div>
+        <!-- <div class="box"> -->
         </div>
-        <h3 class="title" id="title">Titel</h3>
-        <p id="description">Beschreibung</p>
-        <div>
-            <span id="playerCount">Personen:</span>
-            <span id="level">Level: </span>
-            <span id="duration">Dauer: </span>
-        </div>
-        <div id="qrcode"></div>
+        <h1 class="title" id="title">Titel</h1>
 </div>
+
+<div class="challengeWrapper" id="challengeWrapper">
+        <div class="challengeAttributes">
+        <span id="descriptionWrapper"><span id="description"></span></span>
+        <span id="playerCountWrapper"><strong>Personen:</strong> <span id="playerCount"></span></span>
+        <span id="levelWrapper"><strong>Level:</strong> <span id="level"></span></span>
+        <span id="durationWrapper"><strong>Dauer:</strong> <span id="duration"></span></span>
+        <span id="equipmentWrapper"><strong>Material:</strong> <span id="equipment"></span></span>
+        </div>
+        <div class="qrCodeParentContainer">
+            <a href="" id="instructionsLink" class="qrCodeWrapper">
+                <div id="qrCodeInstructions"></div>
+                <p>Erklärungs-Link</p>
+            </a>
+            <a href="" id="challengeLink" class="qrCodeWrapper">
+                <div id="qrcode"></div>
+                <p>Challenge-Link</p>
+            </a>
+            </div>
+        </div>
+        <div class="informationWrapper">
+            <div class="informationIcon"></div>
+            <span>Drücke auf den QR-Code oder scanne ihn, um den Link zu öffnen.<span>
+        </div>
+</div>
+</div>
+
 <div id="error" class="deactivated">
     <h2>Fehler:</h2>
     <p>Challenge konnte nicht gefunden werden.</p>
