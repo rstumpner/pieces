@@ -31,6 +31,6 @@ jobs:
 #        run: |
 #          pytest
       - name: execute converter
-        run: python convert/csv_to.json.py
+        run: python convert/csv_to_json.py
 
 
