@@ -1,5 +1,5 @@
 # Converting of a csv file to json 
-name: Converting of a csv file to json
+name: Converting of the csv file to json
 
 # Runs on pushes on commit
 on:   # on push [push]
