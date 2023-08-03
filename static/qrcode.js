@@ -10,10 +10,6 @@
  */
 var QRCode;
 
-function test() {
-	console.log("test");
-}
-
 (function () {
 	//---------------------------------------------------------------------
 	// QRCode for JavaScript

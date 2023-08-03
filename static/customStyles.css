@@ -1,54 +1,40 @@
-@media only screen and (orientation: portrait) and (max-width: 500px) {
-    #duration {
-        float: inline-start !important;
-    }
+.qrCodeParentContainer {
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-@media only screen and (orientation: portrait) {
-    #qrcode {
-        align-self: normal !important;
-        margin-top: 3vh;
-    }
-
-    #title {
-        margin-left: 5px !important;
-    }
-
-    #timeInput {
-        width: 2vw;
-    }
-
-    #forwardButton,
-    #backwardButton,
-    #playButton,
-    #hideButton {
-        appearance: none;
-        display: block;
-        width: 7vw;
-        cursor: pointer;
-    }
+.qrCodeParentContainer a {
+    box-shadow: none;
 }
 
-#duration {
-    align-self: flex-start;
+.qrCodeWrapper {
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vh;
 }
 
-#level {
-    margin-left: 40px;
-}
-
-#duration {
-    margin-right: 40px;
-    float: inline-end;
-}
-
-#qrcode {
-    width: 15vh;
-    align-self: flex-end;
-    margin: 3vh 40px 0 0;
+.qrCodeWrapper div {
+    width: max-content;
     padding: 5px;
     border: 3px solid black;
     border-radius: 5px;
+}
+
+input[type=text],
+select {
+    padding: 0.25rem 0.4rem;
+    border: 2px solid #333;
+    background-color: white;
+    border-radius: 0.25rem;
+    font-weight: normal;
+    font-size: 12px;
+    height: 1.6rem;
 }
 
 /* maybe show switch */
@@ -89,15 +75,52 @@
     margin: 5px 0px 6px 0px;
 }
 
-.challengeWrapper {
-    margin: 0px 0px 0px 7vw;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+.challengeAttributes {
+    display: grid;
+    grid-template-rows: auto max-content max-content;
+    grid-template-columns: auto;
+    column-gap: 1vw;
+    row-gap: 1.5vh;
+    margin: 1vh 0 3vh 0;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.challengeAttributes {
-    margin-top: 1vh;
+#qrcode img,
+#qrCodeInstructions img {
+    margin: 0;
+}
+
+#error {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    margin-top: 5vh;
+}
+
+#reloadButton {
+    width: max-content;
+    padding: 0 2vw;
+}
+
+#descriptionWrapper {
+    grid-area: 1/1/2/4;
+}
+
+#playerCountWrapper {
+    grid-area: 2/1/3/2;
+}
+
+#levelWrapper {
+    grid-area: 2/2/3/3;
+}
+
+#durationWrapper {
+    grid-area: 2/3/3/4;
+}
+
+#equipmentWrapper {
+    grid-area: 3/1/4/4;
 }
 
 .title {
@@ -105,14 +128,7 @@
 }
 
 #timeInput {
-    font: caption;
-    border: 1px solid grey;
-    border-radius: 3pt;
-    padding: 1pt 4pt;
-    width: 1.8vw;
-    color: black;
-    background-color: #e9e9ed;
-    font-size: 13px
+    width: 2vw;
 }
 
 .childDiv {
@@ -132,7 +148,7 @@
 #parentContainer {
     display: flex;
     flex-direction: row-reverse;
-    width: 90%;
+    width: 100%;
     position: absolute;
     bottom: 0;
     padding: 1vh 0 0 0;
@@ -163,6 +179,31 @@
     background-size: cover;
     height: 6vw;
     width: 6vw;
+}
+
+#submitInput {
+    padding: 2px 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.informationIcon {
+    background-image: url("./images/information.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+}
+
+.informationWrapper {
+    display: flex;
+    gap: 0.75vh;
+    justify-content: start;
+    margin-left: 2.5vw;
+    margin-top: 1vh;
 }
 
 .headlineWrapper {
@@ -218,7 +259,7 @@
 
 #hideButton {
     content: url('./images/open.svg');
-    width: 1.75vw !important;
+    width: 1.75vw;
 }
 
 #hideButton:checked {
@@ -227,7 +268,7 @@
 
 #playButton {
     content: url('./images/play.svg');
-    width: 2vw !important;
+    width: 2vw;
 }
 
 #playButton:checked {
@@ -284,6 +325,10 @@
     background-image: url("./images/piecesIconW.png");
 }
 
+.dark .informationIcon {
+    background-image: url("./images/informationW.svg");
+}
+
 .dark .box {
     background-color: white !important;
 }
@@ -292,6 +337,150 @@
     border-color: white;
 }
 
-.dark #qrcode {
+.dark .qrCodeWrapper div {
     border-color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1600px) {
+
+    #timeInput {
+        width: 2.5vw;
+    }
+
+    #challengeIcon {
+        height: 7vw;
+        width: 7vw;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        width: 3vw !important;
+    }
+
+    #settingsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #timeInput {
+        width: 3vw;
+    }
+
+    #challengeIcon {
+        height: 8vw;
+        width: 8vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    #duration {
+        float: inline-start !important;
+    }
+
+    .qrCodeWrapper div {
+        align-self: normal !important;
+        margin-top: 3vh;
+    }
+
+    #title {
+        margin-left: 5px !important;
+    }
+
+    #timeInput {
+        width: 3.5vw;
+    }
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        width: 4vw !important;
+    }
+
+    #settingsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #challengeIcon {
+        height: 10vw;
+        width: 10vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        width: 5vw !important;
+    }
+
+    #timeInput {
+        width: 5vw;
+    }
+
+    #challengeIcon {
+        height: 11vw;
+        width: 11vw;
+    }
+
+    .main {
+        padding: 5vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        width: 6vw !important;
+    }
+
+    #timeInput {
+        width: 6vw;
+    }
+
+    #challengeIcon {
+        height: 13vw;
+        width: 13vw;
+    }
+
+    .main {
+        padding: 6vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    #forwardButton,
+    #backwardButton,
+    #playButton,
+    #hideButton {
+        width: 7vw !important;
+    }
+
+    #timeInput {
+        width: 7vw;
+    }
+
+    #challengeIcon {
+        height: 15vw;
+        width: 15vw;
+    }
+
+    .main {
+        padding: 7vw;
+    }
 }

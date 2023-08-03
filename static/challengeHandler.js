@@ -1,17 +1,13 @@
-var lastChallenge;
-var timeout;
+var lastChallenge, timeout, challengeIndex, qrCode, qrCodeVideo, baseURL;
 var jsonLocation = "../challenges.json";
-var attributes = ["Personen", "Dauer", "Level"];
 var language = "de";
-var baseURL;
 var timeoutLength = 15000;
 var previousChallenges = [];
-var challengeIndex;
+
 
 $(document).ready(function () {
     if (window.location.href.includes("/en")) {
         jsonLocation = "../../challenges.json";
-        attributes = ["Players", "Duration", "Level"];
         language = "en";
     }
     var link = document.getElementById("languageLink").href + "#" + window.location.href.split("#")[1];
@@ -19,9 +15,7 @@ $(document).ready(function () {
     document.getElementById("langSwitch").href = document.getElementById("languageLink").href = link;
     baseURL = document.getElementById("homeButton").href;
 
-    if (!searchForChallenge()) {
-        GetNewChallenge();
-    }
+    searchForChallenge();
     checkRotationBox();
 });
 
@@ -95,29 +89,7 @@ function GetPreviousChallenge() {
         }
         lastChallenge = obj["titel_de"];
 
-        if (language == "de") {
-            document.getElementById("title").textContent = obj["titel_de"];
-            document.getElementById("description").textContent = obj["description_de"];
-        } else if (language == "en") {
-            document.getElementById("title").textContent = obj["titel_en"];
-            document.getElementById("description").textContent = obj["description_en"];
-        }
-        document.getElementById("playerCount").textContent = attributes[0] + ": " + obj["Anzahl der Mitspieler"];
-        document.getElementById("duration").textContent = attributes[1] + ": " + obj["Dauer (Minuten)"] + " Minuten";
-        document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
-        document.getElementById("qrcode").innerHTML = "";
-
-        // change src of level-icon
-        document.getElementById("challengeIcon").removeAttribute('class');
-        document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
-
-        window.location.href = window.location.href.split("#")[0] + "#" + obj["id"];
-        document.getElementById("languageLink").href = document.getElementById("languageLink").href.split("#")[0] + "#" + obj["id"];
-
-        new QRCode(document.getElementById("qrcode"), baseURL + "challenge/#" + obj.id, {
-            width: 300,
-            height: 300
-        });
+        SetChallengeValues(obj)
     });
 }
 
@@ -141,44 +113,23 @@ function GetNewChallenge() {
             challengeIndex++;
         }
         previousChallenges.push(lastChallenge);
-
-        if (language == "de") {
-            document.getElementById("title").textContent = obj["titel_de"];
-            document.getElementById("description").textContent = obj["description_de"];
-        } else if (language == "en") {
-            document.getElementById("title").textContent = obj["titel_en"];
-            document.getElementById("description").textContent = obj["description_en"];
-        }
-        document.getElementById("playerCount").textContent = attributes[0] + ": " + obj["Anzahl der Mitspieler"];
-        document.getElementById("duration").textContent = attributes[1] + ": " + obj["Dauer (Minuten)"] + " Minuten";
-        document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
-        document.getElementById("qrcode").innerHTML = "";
-
-        // change src of level-icon
-        document.getElementById("challengeIcon").removeAttribute('class');
-        document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
-
-        window.location.href = window.location.href.split("#")[0] + "#" + obj["id"];
-        document.getElementById("languageLink").href = document.getElementById("languageLink").href.split("#")[0] + "#" + obj["id"];
-
-        new QRCode(document.getElementById("qrcode"), baseURL + "challenge/#" + obj.id, {
-            width: 300,
-            height: 300
-        });
+        SetChallengeValues(obj)
     });
 }
 
 function searchForChallenge() {
     var id = window.location.href.split('#')[1];
     if (id == undefined) {
-        return false;
+        GetNewChallenge();
+        return;
     }
     id = id.replaceAll("/", "");
 
     $.getJSON(jsonLocation, function (json) {
         // if id's are in order use selector, otherwise search for .id
         if (!isNumeric(id) || id > json.length || id < 1) {
-            return false;
+            GetNewChallenge();
+            return;
         } else {
             var obj = json[id - 1];
 
@@ -189,30 +140,74 @@ function searchForChallenge() {
                 challengeIndex++;
             }
             previousChallenges.push(lastChallenge)
-
-            if (language == "de") {
-                document.getElementById("title").textContent = obj["titel_de"];
-                document.getElementById("description").textContent = obj["description_de"];
-            } else if (language == "en") {
-                document.getElementById("title").textContent = obj["titel_en"];
-                document.getElementById("description").textContent = obj["description_en"];
-            }
-            document.getElementById("playerCount").textContent = attributes[0] + ": " + obj["Anzahl der Mitspieler"];
-            document.getElementById("duration").textContent = attributes[1] + ": " + obj["Dauer (Minuten)"] + " Minuten";
-            document.getElementById("level").textContent = attributes[2] + ": " + obj["Level"];
-            document.getElementById("qrcode").innerHTML = "";
-
-            // change src of level-icon
-            document.getElementById("challengeIcon").removeAttribute('class');
-            document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
-
-            new QRCode(document.getElementById("qrcode"), baseURL + "challenge/#" + obj.id, {
-                width: 300,
-                height: 300
-            });
+            SetChallengeValues(obj)
         }
     });
     return true;
+}
+
+function SetChallengeValues(obj) {
+    if (language == "de") {
+        document.getElementById("title").textContent = obj["titel_de"];
+        document.getElementById("description").textContent = obj["description_de"];
+    } else if (language == "en") {
+        document.getElementById("title").textContent = obj["titel_en"];
+        document.getElementById("description").textContent = obj["description_en"];
+    }
+    document.getElementById("playerCount").textContent = obj["Anzahl der Mitspieler"];
+    document.getElementById("duration").textContent = obj["Dauer (Minuten)"] + " Minuten";
+    document.getElementById("level").textContent = obj["Level"];
+    if (obj["Material"] != "") {
+        document.getElementById("equipment").textContent = obj["Material"];
+    } else {
+        document.getElementById("equipment").textContent = "-";
+    }
+
+    // change src of level-icon
+    document.getElementById("challengeIcon").removeAttribute('class');
+    document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
+
+    createQRCode(baseURL + "challenge/#" + obj.id);
+    if (obj["Anleitung"] != "") {
+        $(".qrCodeWrapper").first().show();
+        createInstructionsQRCode(obj["Anleitung"])
+    } else {
+        $(".qrCodeWrapper").first().hide();
+    }
+}
+
+function createQRCode(input) {
+    if (qrCode == undefined) {
+        qrCode = new QRCode(document.getElementById("qrcode"), {
+            text: input,
+            width: 192,
+            height: 192,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    } else {
+        qrCode.clear();
+        qrCode.makeCode(input);
+    }
+    document.getElementById("challengeLink").setAttribute("href", input);
+}
+
+function createInstructionsQRCode(input) {
+    if (qrCodeVideo == undefined) {
+        qrCodeVideo = new QRCode(document.getElementById("qrCodeInstructions"), {
+            text: input,
+            width: 192,
+            height: 192,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    } else {
+        qrCodeVideo.clear();
+        qrCodeVideo.makeCode(input);
+    }
+    document.getElementById("instructionsLink").setAttribute("href", input);
 }
 
 function isNumeric(str) {

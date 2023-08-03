@@ -18,13 +18,24 @@ title = 'Challenge-Distribution'
 </div>
 
 <div class="challengeWrapper">
-        <p id="description">Description</p>
         <div class="challengeAttributes">
-            <span id="playerCount">Persons:</span>
-            <span id="level">Level: </span>
-            <span id="duration">Duration: </span>
+        <span id="descriptionWrapper"><span id="description"></span></span>
+        <span id="playerCountWrapper"><strong>Persons:</strong> <span id="playerCount"></span></span>
+        <span id="levelWrapper"><strong>Level:</strong> <span id="level"></span></span>
+        <span id="durationWrapper"><strong>Duration:</strong> <span id="duration"></span></span>
+        <span id="equipmentWrapper"><strong>Equipment:</strong> <span id="equipment"></span></span>
         </div>
-        <div id="qrcode"></div>
+        <div class="qrCodeParentContainer">
+            <a href="" id="instructionsLink" class="qrCodeWrapper">
+                <div id="qrCodeInstructions"></div>
+                <p>Instructions-Link</p>
+            </a>
+            <a href="" id="challengeLink" class="qrCodeWrapper">
+                <div id="qrcode"></div>
+                <p>Challenge-Link</p>
+            </a>
+            </div>
+        </div>
 </div>
 
 <div id="parentContainer">
