@@ -11,7 +11,7 @@ title: "Welcome to Pieces"
 <h3>You already have a challenge-code?</h3>
 <p><b>Explanation:</b> The codes are made up out of numbers (Example: 42)</p>
 <span>Insert here:</span>
-<input id="codeInput" type="text" class="button" style="margin-left: 10px;">
+<input id="codeInput" type="text" class="button">
 <input id="submitInput" type="button" class="button" value="Search">
 
 <h3>Any questions?</h3>

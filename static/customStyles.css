@@ -218,6 +218,10 @@ select {
     margin: 0 0 1vh 0;
 }
 
+#codeInput {
+    margin-left: 10px;
+}
+
 #settingsContainer {
     flex: 1;
     display: flex;
@@ -509,6 +513,10 @@ select {
     .informationIcon {
         flex-shrink: 0;
     }
+
+    .qrCodeWrapper div {
+        padding: 7px 7px 0 7px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -597,6 +605,10 @@ select {
 
     #title {
         font-size: 28px !important;
+    }
+
+    #codeInput {
+        margin-left: 0;
     }
 }
 
