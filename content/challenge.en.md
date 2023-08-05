@@ -43,7 +43,7 @@ title = "Your challenge"
         <span id="durationWrapper"><strong>Duration:</strong> <span id="duration"></span></span>
         <span id="equipmentWrapper"><strong>Equipment:</strong> <span id="equipment"></span></span>
         </div>
-        <div class="qrCodeParentContainer">
+        <div id="challengeQRCode" class="qrCodeParentContainer">
             <a href="" id="instructionsLink" class="qrCodeWrapper">
                 <div id="qrCodeInstructions"></div>
                 <p>Instructions-Link</p>
@@ -56,7 +56,7 @@ title = "Your challenge"
         </div>
         <div class="informationWrapper">
             <div class="informationIcon"></div>
-            <span>Press the QR-Code or scan it to open the link.<span>
+            <span class="informationText">Press the QR-Code or scan it to open the link.<span>
         </div>
 </div>
 </div>

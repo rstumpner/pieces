@@ -148,7 +148,7 @@ select {
 #parentContainer {
     display: flex;
     flex-direction: row-reverse;
-    width: 100%;
+    width: 94%;
     position: absolute;
     bottom: 0;
     padding: 1vh 0 0 0;
@@ -293,11 +293,14 @@ select {
     cursor: pointer;
 }
 
+#challengeQRCode {
+    flex-direction: row;
+}
+
 /* DARK MODE */
 
 .dark #hideButton {
     content: url('./images/openW.svg');
-    width: 1.75vw !important;
 }
 
 .dark #hideButton:checked {
@@ -306,7 +309,6 @@ select {
 
 .dark #playButton {
     content: url('./images/playW.svg');
-    width: 2vw !important;
 }
 
 .dark #playButton:checked {
@@ -364,11 +366,6 @@ select {
         width: 3vw !important;
     }
 
-    #settingsContainer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     #timeInput {
         width: 3vw;
     }
@@ -380,10 +377,6 @@ select {
 }
 
 @media only screen and (max-width: 1200px) {
-
-    #duration {
-        float: inline-start !important;
-    }
 
     .qrCodeWrapper div {
         align-self: normal !important;
@@ -437,6 +430,28 @@ select {
     .main {
         padding: 5vw;
     }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    #menu {
+        margin-left: 0;
+    }
+
+    .main {
+        max-width: 80%;
+    }
+
+    #post-single {
+        width: 90%;
+    }
+
+    #settingsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: .3vh;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -448,6 +463,22 @@ select {
         width: 6vw !important;
     }
 
+    #playerCountWrapper {
+        grid-area: 2/1/3/2;
+    }
+
+    #levelWrapper {
+        grid-area: 2/2/3/4;
+    }
+
+    #durationWrapper {
+        grid-area: 3/1/4/2;
+    }
+
+    #equipmentWrapper {
+        grid-area: 3/2/4/4;
+    }
+
     #timeInput {
         width: 6vw;
     }
@@ -455,14 +486,52 @@ select {
     #challengeIcon {
         height: 13vw;
         width: 13vw;
+        flex-shrink: 0;
     }
 
     .main {
-        padding: 6vw;
+        padding: 4vw;
+    }
+
+    .qrCodeParentContainer {
+        justify-content: space-between;
+        scale: 0.95;
+    }
+
+    #menu {
+        margin-right: 5vw;
+    }
+
+    .headlineWrapper {
+        margin-top: 3vh;
+    }
+
+    .informationIcon {
+        flex-shrink: 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .qrCodeParentContainer {
+        justify-content: center;
+        scale: 0.9;
+        gap: 5vw;
+    }
+
+    .challengeAttributes {
+        margin-bottom: 0;
+    }
+
+    #parentContainer {
+        width: 90%;
     }
 }
 
 @media only screen and (max-width: 600px) {
+
+    .qrCodeParentContainer {
+        flex-direction: column;
+    }
 
     #forwardButton,
     #backwardButton,
@@ -475,12 +544,82 @@ select {
         width: 7vw;
     }
 
-    #challengeIcon {
-        height: 15vw;
-        width: 15vw;
+    #parentContainer {
+        width: 94%;
     }
 
     .main {
-        padding: 7vw;
+        padding: 2vw;
+    }
+
+    #playerCountWrapper {
+        grid-area: 2/1/3/4;
+    }
+
+    #levelWrapper {
+        grid-area: 3/1/4/4;
+    }
+
+    #durationWrapper {
+        grid-area: 4/1/5/4;
+    }
+
+    #equipmentWrapper {
+        grid-area: 5/1/6/4;
+    }
+
+    #title {
+        font-size: 32px !important;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .qrCodeParentContainer {
+        scale: 0.8;
+    }
+
+    #parentContainer {
+        width: 94%;
+    }
+
+}
+
+@media only screen and (max-width: 380px) {
+
+    .mainLogo {
+        display: none;
+    }
+
+    #timeInput {
+        width: 10vw;
+    }
+
+    #title {
+        font-size: 28px !important;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .nav {
+        flex-direction: column;
+        align-content: flex-start;
+        margin-left: 7vw;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .mainLogo {
+        display: initial;
+    }
+
+    #title {
+        font-size: 26px !important;
+    }
+
+    #timeInput {
+        width: 12vw;
     }
 }
