@@ -182,7 +182,7 @@ function SetChallengeValues(obj) {
     document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
 
     createQRCode(baseURL + "challenge/#" + obj["ID"]);
-    if (obj["Anleitung"] != null) {
+    if (obj["Anleitung"] != null && obj["Anleitung"].toLowerCase().includes("http")) {
         $(".qrCodeWrapper").first().show();
         createInstructionsQRCode(obj["Anleitung"])
     } else {
