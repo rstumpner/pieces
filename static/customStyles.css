@@ -84,6 +84,7 @@ select {
     margin: 1vh 0 3vh 0;
     align-items: center;
     justify-content: space-evenly;
+    padding: 0vh 4vw;
 }
 
 #qrcode img,
@@ -175,6 +176,7 @@ select {
     background-size: cover;
     height: 6vw;
     width: 6vw;
+    flex-shrink: 0;
 }
 
 #submitInput {
@@ -520,6 +522,7 @@ select {
 
     .challengeAttributes {
         margin-bottom: 0;
+        padding: 0;
     }
 
     #parentContainer {

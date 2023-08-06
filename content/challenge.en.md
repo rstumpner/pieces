@@ -57,6 +57,10 @@ title = "Your challenge"
             <div class="informationIcon"></div>
             <span class="informationText">Press the QR-Code or scan it to open the link.<span>
         </div>
+        <div class="informationWrapper translationWarning">
+            <div class="informationIcon"></div>
+            <span class="informationText">There might not be a translation available, in this case translate it yourself or ask for help.<span>
+        </div>
 </div>
 </div>
 
