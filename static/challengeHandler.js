@@ -3,7 +3,7 @@ var jsonLocation = "../challenges.json";
 var language = "de";
 var timeoutLength = 15000;
 var previousChallenges = [];
-
+const alphabetRegex = /[a-zA-Z]/;
 
 $(document).ready(function () {
     if (window.location.href.includes("/en")) {
@@ -156,11 +156,11 @@ function SetChallengeValues(obj) {
     if (language == "de") {
         document.getElementById("title").textContent = obj["titel_de"];
         document.getElementById("description").textContent = obj["description_de"];
-        document.getElementById("duration").textContent += " Minuten";
+        if (!alphabetRegex.test(obj["Dauer (Minuten)"])) document.getElementById("duration").textContent += " Minuten";
     } else if (language == "en") {
         document.getElementById("title").textContent = (obj["titel_en"] != null) ? obj["titel_en"] : obj["titel_de"];
         document.getElementById("description").textContent = (obj["description_en"] != null) ? obj["description_en"] : obj["description_de"];
-        document.getElementById("duration").textContent += " minutes";
+        if (!alphabetRegex.test(obj["Dauer (Minuten)"])) document.getElementById("duration").textContent += " minutes";
 
         if (obj["titel_en"] == null || obj["description_en"] == null) {
             $(".translationWarning").first().show();

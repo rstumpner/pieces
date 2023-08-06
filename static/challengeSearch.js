@@ -2,6 +2,7 @@ var qrCode, qrCodeVideo;
 var jsonLocation = "../challenges.json";
 var language = "de";
 var attributes = ["Personen", "Dauer", "Level"];
+const alphabetRegex = /[a-zA-Z]/;
 
 function deactivateFields() {
     document.getElementById("challenge").classList.add("deactivated");
@@ -44,11 +45,11 @@ function SetChallengeValues(obj) {
     if (language == "de") {
         document.getElementById("title").textContent = obj["titel_de"];
         document.getElementById("description").textContent = obj["description_de"];
-        document.getElementById("duration").textContent += " Minuten";
+        if (!alphabetRegex.test(obj["Dauer (Minuten)"])) document.getElementById("duration").textContent += " Minuten";
     } else if (language == "en") {
         document.getElementById("title").textContent = (obj["titel_en"] != null) ? obj["titel_en"] : obj["titel_de"];
         document.getElementById("description").textContent = (obj["description_en"] != null) ? obj["description_en"] : obj["description_de"];
-        document.getElementById("duration").textContent += " minutes";
+        if (!alphabetRegex.test(obj["Dauer (Minuten)"])) document.getElementById("duration").textContent += " minutes";
 
         if (obj["titel_en"] == null || obj["description_en"] == null) {
             $(".translationWarning").first().show();
