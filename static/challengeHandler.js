@@ -147,16 +147,24 @@ function searchForChallenge() {
 }
 
 function SetChallengeValues(obj) {
+    if (obj["Dauer (Minuten)"] == null) {
+        document.getElementById("duration").textContent = "?";
+    } else {
+        document.getElementById("duration").textContent = obj["Dauer (Minuten)"];
+    }
+
     if (language == "de") {
         document.getElementById("title").textContent = obj["titel_de"];
         document.getElementById("description").textContent = obj["description_de"];
+        document.getElementById("duration").textContent += " Minuten";
     } else if (language == "en") {
         document.getElementById("title").textContent = obj["titel_en"];
         document.getElementById("description").textContent = obj["description_en"];
+        document.getElementById("duration").textContent += " minutes";
     }
-    document.getElementById("playerCount").textContent = obj["Anzahl der Mitspieler"];
-    document.getElementById("duration").textContent = obj["Dauer (Minuten)"] + " Minuten";
+
     document.getElementById("level").textContent = obj["Level"];
+
     if (obj["Material"] != "") {
         document.getElementById("equipment").textContent = obj["Material"];
     } else {
@@ -167,8 +175,8 @@ function SetChallengeValues(obj) {
     document.getElementById("challengeIcon").removeAttribute('class');
     document.getElementById("challengeIcon").classList.add("level" + obj["Level"]);
 
-    createQRCode(baseURL + "challenge/#" + obj.id);
-    if (obj["Anleitung"] != "") {
+    createQRCode(baseURL + "challenge/#" + obj["ID"]);
+    if (obj["Anleitung"] != null) {
         $(".qrCodeWrapper").first().show();
         createInstructionsQRCode(obj["Anleitung"])
     } else {

@@ -20,7 +20,6 @@ title = 'Challenge-Distribution'
 <div class="challengeWrapper">
         <div class="challengeAttributes">
         <span id="descriptionWrapper"><span id="description"></span></span>
-        <span id="playerCountWrapper"><strong>Persons:</strong> <span id="playerCount"></span></span>
         <span id="levelWrapper"><strong>Level:</strong> <span id="level"></span></span>
         <span id="durationWrapper"><strong>Duration:</strong> <span id="duration"></span></span>
         <span id="equipmentWrapper"><strong>Equipment:</strong> <span id="equipment"></span></span>

@@ -38,7 +38,6 @@ title = "Deine Challenge"
 <div class="challengeWrapper" id="challengeWrapper">
         <div class="challengeAttributes">
         <span id="descriptionWrapper"><span id="description"></span></span>
-        <span id="playerCountWrapper"><strong>Personen:</strong> <span id="playerCount"></span></span>
         <span id="levelWrapper"><strong>Level:</strong> <span id="level"></span></span>
         <span id="durationWrapper"><strong>Dauer:</strong> <span id="duration"></span></span>
         <span id="equipmentWrapper"><strong>Material:</strong> <span id="equipment"></span></span>
