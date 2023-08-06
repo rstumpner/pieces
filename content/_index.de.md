@@ -6,7 +6,8 @@ title: "Willkommen bei Pieces"
 <script type="text/javascript" src="./jquery.min.js"></script>
 <script type="text/javascript" src="./start.js"></script>
 
-<p>Beschreibung ... <br> ... <br> ... <br>...</p>
+### Worum geht's?
+Gemeinsam gibt es viele Herausforderungen zu bewältigen und wir alle tragen ein Stück bei. Zu den Öffnungszeiten des Pieces-Zelt kannst du verschiedenste Challenges in drei aufsteigenden Levels bewältigen. Ihr könnt ganz nach eurem Geschmack selbst wählen und auch selbst entscheiden, wann ihr wie viele Pieces erobert. Dafür habt ihr eine ganze Woche Zeit (Dienstag bis Dienstag).
 <br>
 <h3>Du hast bereits einen Challenge-Code?</h3>
 <p><b>Erklärung:</b> Die Codes bestehen nur aus Zahlen (Beispiel: 42)</p>
