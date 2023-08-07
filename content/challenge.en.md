@@ -38,12 +38,11 @@ title = "Your challenge"
 <div class="challengeWrapper">
         <div class="challengeAttributes">
         <span id="descriptionWrapper"><span id="description"></span></span>
-        <span id="playerCountWrapper"><strong>Persons:</strong> <span id="playerCount"></span></span>
         <span id="levelWrapper"><strong>Level:</strong> <span id="level"></span></span>
         <span id="durationWrapper"><strong>Duration:</strong> <span id="duration"></span></span>
         <span id="equipmentWrapper"><strong>Equipment:</strong> <span id="equipment"></span></span>
         </div>
-        <div class="qrCodeParentContainer">
+        <div id="challengeQRCode" class="qrCodeParentContainer">
             <a href="" id="instructionsLink" class="qrCodeWrapper">
                 <div id="qrCodeInstructions"></div>
                 <p>Instructions-Link</p>
@@ -56,7 +55,11 @@ title = "Your challenge"
         </div>
         <div class="informationWrapper">
             <div class="informationIcon"></div>
-            <span>Press the QR-Code or scan it to open the link.<span>
+            <span class="informationText">Press the QR-Code or scan it to open the link.<span>
+        </div>
+        <div class="informationWrapper translationWarning">
+            <div class="informationIcon"></div>
+            <span class="informationText">There might not be a translation available, in this case translate it yourself or ask for help.<span>
         </div>
 </div>
 </div>
