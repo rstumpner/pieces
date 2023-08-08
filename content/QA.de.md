@@ -31,12 +31,12 @@ Auf dieser Webseite unter challenges oder bei den Pieces am Hauptplatz der CaEx.
 
 ### Wann kann ich mir einen Stempel für durchgeführte Challenges abholen ?
 Öffnungszeiten:
-Di 14:00 -17:00, 19:00 – 20:00
-Do 14:00 – 17:00
-Fr 9:00 11:00 – 14:00 - 17:00
-Sa 17:00 - 19:00
-So 10:00 – 11:00, 15:00 – 16:00
-Di 09:00 – 11:00 , Abschluss pieces
+- Di 14:00 -17:00, 19:00 – 20:00
+- Do 14:00 – 17:00
+- Fr 9:00 11:00 – 14:00 - 17:00
+- Sa 17:00 - 19:00
+- So 10:00 – 11:00, 15:00 – 16:00
+- Di 09:00 – 11:00 , Abschluss pieces
 
 ### zum Ablauf
 - hole dir deinen stempelpass
