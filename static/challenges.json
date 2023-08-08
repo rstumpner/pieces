@@ -342,6 +342,19 @@
   "Active": "true"
  },
  {
+    "id": 136,
+    "titel_de": "Feuerholz",
+    "titel_en": "Firewood",
+    "description_de": "Bringe Holz zur Unterlager Feuerstelle",
+    "description_en": "Bring some wood to the firepit of your subcamp",
+    "Anzahl der Mitspieler": 3,
+    "Dauer (Minuten)": 10,
+    "Level": 1,
+    "Anleitung": "",
+    "Material": "",
+    "Active": "true"
+   },
+ {
   "id": 121,
   "titel_de": "Freundschaftknoten",
   "titel_en": "Friendship knot",
