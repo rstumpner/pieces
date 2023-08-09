@@ -1,5 +1,5 @@
 # Converting of a csv file to json 
-name: Converting of the csv file to json
+name: Converting cellanges from excel file to json
 
 # Runs on pushes on commit
 on:   # on push [push]
@@ -31,6 +31,6 @@ jobs:
 #        run: |
 #          pytest
       - name: execute converter
-        run: python convert/csv_to_json.py
+        run: python convert/xlsx_to_json_csv.py
 
 
