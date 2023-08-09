@@ -1,17 +1,21 @@
 # Converting of a csv file to json 
-name: Converting of the csv file to json
+name: Converting cellanges from excel file to json
 
 # Runs on pushes on commit
-on:   # on push [push]
+on:  
+  # Runs on pushes targeting the default branch
+  push:
+    paths:
+      - 'convert/together23_pieces_datenbank.xlsx'
   workflow_dispatch: # manual execute
 
 # Jobs to execute
 jobs:
   build:
     runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+    strategy:
+      matrix:
+        python-version: ["3.8"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 
@@ -19,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ruff pytest pandas
+          pip install ruff pytest pandas openpyxl
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with ruff
         run: |
@@ -31,6 +35,6 @@ jobs:
 #        run: |
 #          pytest
       - name: execute converter
-        run: python convert/csv_to_json.py
+        run: python convert/xlsx_to_json_csv.py
 
 
