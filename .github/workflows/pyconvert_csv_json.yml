@@ -2,7 +2,11 @@
 name: Converting cellanges from excel file to json
 
 # Runs on pushes on commit
-on:   # on push [push]
+on:  
+  # Runs on pushes targeting the default branch
+  push:
+    paths:
+      - 'convert/together23_pieces_datenbank.xlsx'
   workflow_dispatch: # manual execute
 
 # Jobs to execute
