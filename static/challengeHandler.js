@@ -100,7 +100,7 @@ function GetNewChallenge() {
 
         let filteredArray = [];
         for (var i = 0; i < json.length; i++) {
-            if (json[i]["Level"] == level && lastChallenge != json[i]["titel_de"]) {
+            if (json[i]["Level"] == level && lastChallenge != json[i]["titel_de"] && json[i]["Active"]) {
                 filteredArray.push(json[i])
             }
         }
@@ -126,7 +126,7 @@ function searchForChallenge() {
     id = id.replaceAll("/", "");
 
     $.getJSON(jsonLocation, function (json) {
-        // if id's are in order use selector, otherwise search for .id
+        // if id's are in acorder use selector, otherwise search for .id
         if (!isNumeric(id) || id > json.length || id < 1) {
             GetNewChallenge();
             return;
